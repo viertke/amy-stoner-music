@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio — Amy Friedl Stoner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #2c2c2c;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #000;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            padding: 0 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 300;
+            font-size: 0.95rem;
+            transition: opacity 0.3s ease;
+        }
+
+        nav a:hover {
+            opacity: 0.7;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #000;
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .hero-text {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            font-size: 3.5rem;
+            font-weight: 300;
+            letter-spacing: 0.5em;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        /* Bio Section */
+        .bio-section {
+            background-color: #e8e8e8;
+            padding: 4rem 2rem;
+        }
+
+        .bio-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .bio-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #2c2c2c;
+        }
+
+        .bio-text strong {
+            font-weight: 700;
+        }
+
+        .bio-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .soundcloud-embed {
+            width: 100%;
+        }
+
+        .soundcloud-embed iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+        }
+
+        /* Subscribe Section */
+        .subscribe-section {
+            background-color: #e8e8e8;
+            padding: 3rem 2rem 4rem 2rem;
+        }
+
+        .subscribe-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .subscribe-container h2 {
+            font-size: 1.8rem;
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .subscribe-container p {
+            font-size: 0.95rem;
+            color: #4a4a4a;
+            margin-bottom: 2rem;
+        }
+
+        .subscribe-form {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .subscribe-form input {
+            padding: 0.75rem 1rem;
+            border: 1px solid #ddd;
+            font-size: 0.9rem;
+            font-family: 'Lato', sans-serif;
+            flex: 1;
+            min-width: 200px;
+            max-width: 250px;
+        }
+
+        .subscribe-form button {
+            padding: 0.75rem 2.5rem;
+            background-color: #fff;
+            color: #2c2c2c;
+            border: 2px solid #2c2c2c;
+            font-size: 0.9rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .subscribe-form button:hover {
+            background-color: #2c2c2c;
+            color: #fff;
+        }
+
+        .privacy-note {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            background-color: #e8e8e8;
+            padding: 0 2rem 4rem 2rem;
+        }
+
+        .reviews-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .review-image {
+            width: 100%;
+            height: auto;
+        }
+
+        .reviews-quotes {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .quote-block {
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        .quote-block p {
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            color: #2c2c2c;
+        }
+
+        .quote-source {
+            font-style: normal;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000;
+            color: #fff;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .footer-email {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 300;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-email:hover {
+            opacity: 0.7;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1.5rem;
+                font-size: 0.85rem;
+            }
+
+            .hero-text {
+                font-size: 2rem;
+                letter-spacing: 0.3em;
+            }
+
+            .bio-container,
+            .reviews-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .subscribe-form {
+                flex-direction: column;
+            }
+
+            .subscribe-form input,
+            .subscribe-form button {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="landing.html">home</a></li>
+            <li><a href="listen.html">listen</a></li>
+            <li><a href="christmas.html">christmas</a></li>
+            <li><a href="fleetwood-mac.html">fleetwood mac</a></li>
+            <li><a href="gallery.html">gallery</a></li>
+            <li><a href="press.html">press</a></li>
+            <li><a href="contact.html">contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="images/Xmasshow1.webp" alt="Amy Friedl Stoner" class="hero-image">
+        <h1 class="hero-text">Amy Friedl Stoner</h1>
+    </section>
+
+    <!-- Bio Section -->
+    <section class="bio-section">
+        <div class="bio-container">
+            <div class="bio-text">
+                <p><strong>Amy Friedl Stoner</strong> is an accomplished and versatile cabaret/jazz singer born and raised in Cedar Rapids, Iowa. Amy made her Carnegie Hall debut in May 2018 as a featured performer in "All the Way: The Music of Jimmy Van Heusen" produced by the Mabel Mercer Foundation.</p>
+
+                <p>Her solo cabaret shows have sold out in venues around the US, including <strong>The Gaslight Theatre</strong> (St. Louis), <strong>Davenport's</strong> (Chicago), and <strong>Cabaret in the Courtyard</strong> (Cedar Rapids). Amy has also been warmly received in other notable venues such as the famous <strong>Birdland Jazz Club</strong> (NYC), <strong>Don't Tell Mama</strong> (NYC), <strong>Kranzburg Arts Center</strong> (St. Louis), and <strong>Noce</strong> (Des Moines). In March 2017, she debuted her show <em>Dreamchaser</em> to rave reviews at the famed <strong>Metropolitan Room</strong> (NYC).</p>
+
+                <p>She has performed with the legendary <strong>Marilyn Maye</strong> as a special guest in her show at The Inn (Lake Okoboji, IA) and opened for her at the <strong>Sheldon Concert Hall</strong> (St. Louis). Amy has worked with numerous Tony and Grammy award-winning artists, such as Faith Prince, Christine Ebersole, Jason Robert Brown, and Billy Stritch, music director for Liza Minnelli and Tony Bennett.</p>
+            </div>
+
+            <div class="soundcloud-embed">
+                <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/43969673&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscribe Section -->
+    <section class="subscribe-section">
+        <div class="subscribe-container">
+            <h2>Subscribe</h2>
+            <p>Sign up with your email address to receive news and performance updates</p>
+            <form class="subscribe-form" action="#" method="post">
+                <input type="text" name="fname" placeholder="First Name" required>
+                <input type="text" name="lname" placeholder="Last Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <button type="submit">Sign Up</button>
+            </form>
+            <p class="privacy-note">We respect your privacy.</p>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <div class="reviews-container">
+            <img src="images/Golddressdone.webp" alt="Amy Friedl Stoner" class="review-image">
+            
+            <div class="reviews-quotes">
+                <div class="quote-block">
+                    <p>"Her Voice is stunning. She Smoothly transitioned from one genre to the next. The transparent truth that shines through is that she needs to do this. It's not a nice thing, it's the thing."</p>
+                    <p class="quote-source">— The Cabaret Way</p>
+                </div>
+
+                <div class="quote-block">
+                    <p>"The disparate repertoire was brought together seamlessly through her uncluttered yet elegant delivery."</p>
+                    <p class="quote-source">— Bistro Awards</p>
+                </div>
+
+                <div class="quote-block">
+                    <p>"Amy Friedl Stoner has shown up on the Cabaret scene as a confident, classy performer. Her passionate choruses moved the soul."</p>
+                    <p class="quote-source">— Cabaret Scenes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>Contact: <a href="mailto:amystonermusic@gmail.com" class="footer-email">amystonermusic@gmail.com</a></p>
+        </div>
+    </footer>
+</body>
+</html>
